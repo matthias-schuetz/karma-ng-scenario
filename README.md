@@ -22,7 +22,8 @@ npm install karma-ng-scenario --save-dev
 ```
 
 ## Configuration
-Following code shows the default configuration...
+Following code shows the default configuration.
+This fork includes a patch where you need to define the path to your "angular-scenario.js" file in your configuration file. This enables you to use an appropriate version of the scenario file that works with your version of AngularJS.
 ```js
 // karma.conf.js
 module.exports = function(config) {
@@ -30,6 +31,7 @@ module.exports = function(config) {
     frameworks: ['ng-scenario'],
 
     files: [
+      'tests/test/lib/angular/angular-scenario.js',
       '*.js'
     ]
   });
